@@ -6,8 +6,8 @@ new WOW().init();
 
 // MAIN-PAIGE-SLIDER START
 $('.slider').slick({
-	infinite: true,
-	autoplay: true,
+  infinite: true,
+  autoplay: true,
   autoplaySpeed: 5000,
   slidesToShow: 1,
   infinite: true,
@@ -200,10 +200,10 @@ function numUp(){
 
 // MAIN-PAIGE-MEWS-SLIDER START
 $('.sect-news__slider').slick({
-	slidesToShow: 1,
-	infinite: true,
-	dots: true,
-	arrows: false,
+  slidesToShow: 1,
+  infinite: true,
+  dots: true,
+  arrows: false,
   appendDots:$(".news-slick-dots-wrap"),
 });
 // MAIN-PAIGE-MEWS-SLIDER END
