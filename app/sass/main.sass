@@ -387,7 +387,7 @@ h4, .h4
 	justify-content: center
 	margin-bottom: 5px
 	+media-breakpoint-down(lg)
-		top: -400px
+		top: -353px
 	.slick-dots
 	ul
 		.slick-active
@@ -439,6 +439,7 @@ h4, .h4
 		position: relative
 	&__img
 		height: 75vh
+		width: 100%
 		+media-breakpoint-down(lg)
 			height: 523px
 			width: 100%
@@ -449,6 +450,8 @@ h4, .h4
 				width: 100%
 		img
 			width: 100%
+			object-fit: cover
+			height: 100%
 	&__inner
 		position: absolute
 		top: 0
@@ -580,6 +583,9 @@ h4, .h4
 			broder-right: 0!important
 	&__link
 		color: $text
+		pointer-events: none
+		+media-breakpoint-down(lg)
+			pointer-events: auto 
 	&__submenu
 		display: none
 		margin-top: 40px
@@ -654,12 +660,16 @@ h4, .h4
 .sect-physical
 
 .water_meters
+	+media-breakpoint-down(lg)
+		margin-bottom: 30px
 	&__info
 		background: #EBF0F5
 		padding: 28px 24px 24px 29px
 	&__text
 		padding-right: 80px
 		margin-bottom: 21px
+	&__img
+		width: 100%
 
 .learn-more-link 
 	text-decoration: underline
@@ -736,6 +746,12 @@ h4, .h4
 		margin-bottom: 24px
 
 .form-min
+	+media-breakpoint-down(lg)
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
 	&__input
 		width: 100%
 		height: 50px
@@ -744,6 +760,8 @@ h4, .h4
 		box-shadow: inset 1px 1px 4px rgba(45, 55, 60, .2)
 		color: $gray
 		padding: 0 20px
+		+media-breakpoint-down(lg)
+			margin-right: 30px
 		&::placeholder
 			font-size: 15px
 			border: 0
@@ -752,6 +770,8 @@ h4, .h4
 		border-radius: 0
 		max-width: 100%
 		margin-top: 10px
+		+media-breakpoint-down(lg)
+			margin-top: 0
 
 
 // SECT-FACTS
@@ -782,6 +802,9 @@ h4, .h4
 		color: $light-blue
 		text-shadow: 4px 4px 0 rgba(0, 0, 0, .15)
 
+#servers
+	+media-breakpoint-down(lg)
+		background: #EBF0F5
 .facts-number
 	background-color: #EBF0F5
 	color: $gray
@@ -801,6 +824,9 @@ h4, .h4
 // SECTION NEWS
 .sect-news
 	position: relative
+	+media-breakpoint-down(lg)
+		.col-xl-8
+			padding: 0
 	&__learn-more-link
 		font-size: 16px
 		font-family: $font
@@ -862,6 +888,9 @@ h4, .h4
 					transition: right .5s ease
 			.sect-news__img
 				transition: all .3s ease-out
+				+media-breakpoint-down(lg)
+					img
+						width: 100%
 			&:hover
 				.sect-news__img
 					img
@@ -875,17 +904,29 @@ h4, .h4
 				left: 0
 				background: none
 				max-width: 700px
+				+media-breakpoint-down(lg)
+					position: static
+					background: #EBF0F5
+				+media-breakpoint-down(md)
+					padding-top: 30px
 			.sect-news__desc
 				color: #fff
 				font-size: 26px
 				line-height: 32px
+				+media-breakpoint-down(lg)
+					color: $text
 			.learn-more-link
 				text-decoration: none
 				font-size: 16px
 				color: #fff
 				font-weight: 400
-
-
+				+media-breakpoint-down(lg)
+					&:hover
+						&:after
+							right: -20px
+					color: $text
+					&:after
+						right: -20px
 	&__info
 		background: #EBF0F5
 		height: 208px
@@ -901,7 +942,9 @@ h4, .h4
 		flex-direction: column
 		justify-content: space-between
 
-.news-slick-dots-wrap   
+.news-slick-dots-wrap
+	+media-breakpoint-down(lg)
+		margin-top: 30px
 	.slick-dots
 		display: -webkit-flex
 		display: -moz-flex
@@ -936,6 +979,8 @@ h4, .h4
 	width: 100%
 	padding: 43px 0px 56px 0px
 	padding-right: 0
+	+media-breakpoint-down(lg)
+		padding: 43px 0 114px 0
 	&__btn
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, .25)
 	+media-breakpoint-down(sm)
@@ -946,6 +991,11 @@ h4, .h4
 		margin-top: 14px
 		line-height: 14px
 		max-width: 518px
+		+media-breakpoint-down(md)
+			position: absolute
+			bottom: -265px
+			left: 12px
+			max-width: 100%
 		p
 			margin-bottom: 0
 			color: #fff
@@ -995,6 +1045,9 @@ h4, .h4
 	background: #EBF0F5
 	margin-top: 93px
 	padding: 0 0 50px
+	&__info
+		.footer__copy
+			margin-top: 50px
 	&__infoblock
 		margin-top: 40px
 	&__social
@@ -1017,16 +1070,44 @@ h4, .h4
 		text-align: right
 		a, p
 			color: $gray
+	&__social--mobile
+		text-align: left
 
 
 .footer-menu
 	padding: 27px 30px
 	background: #CDD9E1
 	height: 100%
+	&--submenu_fix
+		.footer-menu__submenu
+			margin-bottom: 20px
+		.footer-menu__item
+			margin-bottom: 20px
+			&:nth-child(1), &:nth-child(2), &:nth-child(4)
+				.footer-menu__link		
+					pointer-events: auto
+				&:before
+					display: none
 	&__list
 		list-style-type: none
 	&__item
 		margin-bottom: 20px
+		position: relative
+	&__item
+		+media-breakpoint-down(md)
+			margin-bottom: 0
+			cursor: pointer
+			.footer-menu__link		
+				pointer-events: none
+			&:before
+				content: ''
+				position: absolute
+				top: 3px
+				left: -21px
+				width: 30px
+				height: 30px
+				background: url(../img/arrow_right--gray.svg) no-repeat
+				background-size: 15px 15px
 	&__link
 		font-weight: 500
 		font-size: 18px
@@ -1034,6 +1115,8 @@ h4, .h4
 	&__submenu
 		list-style-type: none
 		margin-top: 10px
+		+media-breakpoint-down(md)
+			display: none
 	&__sub-item
 		margin-left: 0
 		margin-bottom: 10px
@@ -1045,3 +1128,6 @@ h4, .h4
 			text-decoration: underline
 
 
+.footer__mt-fixed,
+	+media-breakpoint-down(md)
+		margin-top: 30px

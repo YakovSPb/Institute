@@ -245,6 +245,13 @@ close.on('click', function(event){
 // MOBILE MENU END
 
 
+// FOOTER MOBILE TAB START
+
+$('.footer-menu__item').click(function(){
+ $(this).find('.footer-menu__submenu').slideToggle('slow');
+});
+
+// FOOTER MOBILE TAB END
 
 
 
