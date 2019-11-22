@@ -7,8 +7,9 @@
 	color: #666
 
 ::selection
-	background-color: $accent
+	background-color: none
 	color: #fff
+
 
 input, textarea
 	outline: none
@@ -121,6 +122,10 @@ h2, .h2
 	margin: 94px  0 30px
 	font-weight: 400
 	color: $text
+	+media-breakpoint-down(sm)
+		font-size: 26px
+		line-height: 32px
+		margin: 64px  0 30px
 
 h3, .h3,
 	font-family: "Rubik2", sans-serif
@@ -128,6 +133,9 @@ h3, .h3,
 	line-height: 32px
 	font-weight: 500
 	color: $text
+	+media-breakpoint-down(sm)
+		font-size: 20px
+		line-height: 28px
 
 h4, .h4
 	font-size: 24px
@@ -161,15 +169,26 @@ h4, .h4
 	margin-top: 30px
 	+media-breakpoint-down(lg)
 		margin-bottom: 30px
+	+media-breakpoint-down(sm)
+		margin-bottom: 8px
 	.logo__img
 		width: 350px
 		height: 54px
+		+media-breakpoint-down(sm)
+			width: 250px
+			height: 39px
+			margin-bottom: 30px
 	&__gumburger
 		display: none
 		cursor: pointer
 		width: 20px
 		height: 20px
 		z-index: 1000
+		&:after
+			content: ''
+			background: url(../img/menu-mobile--hover.svg) no-repeat
+			position: absolute
+			z-index: -10000
 		&:hover
 			&:before
 				background: url(../img/menu-mobile--hover.svg) no-repeat
@@ -183,6 +202,9 @@ h4, .h4
 			position: absolute
 			top: 16px
 			right: -55px
+			+media-breakpoint-down(sm)
+				top: -11px
+				right: -32px
 		img
 			width: 24px
 			height: 24px
@@ -202,6 +224,11 @@ h4, .h4
 			margin-right: 60px
 			span
 				display: none
+		+media-breakpoint-down(sm)
+			margin-right: 30px
+			position: absolute
+			bottom: -13px
+			right: 18px
 		a
 			font-size: 14px
 	&__phone
@@ -216,6 +243,11 @@ h4, .h4
 			position: relative
 			padding-left: 30px
 			font-family: "Rubik"
+			&:after
+				content: ''
+				background: url(../img/phone_icon--hover.svg) no-repeat
+				position: absolute
+				z-index: -10000
 			&:hover
 				&:before
 					background: url(../img/phone_icon--hover.svg) no-repeat 
@@ -225,10 +257,14 @@ h4, .h4
 				width: 20px
 				height: 20px
 				position: absolute
-				top: 1
-				left: 0
+				top: 1px
+				left: 0px
+				+media-breakpoint-down(lg)
+					top: -10px
 	&__mail
 		margin-left: 30px
+		+media-breakpoint-down(md)
+			margin-left: 20px
 		a
 			display: -webkit-flex
 			display: -moz-flex
@@ -238,6 +274,11 @@ h4, .h4
 			align-items: center
 			position: relative
 			padding-left: 30px
+			&:after
+				content: ''
+				background: url(../img/email_icon--hover.svg) no-repeat
+				position: absolute
+				z-index: -10000
 			&:hover
 				&:before
 					background: url(../img/email_icon--hover.svg) no-repeat 
@@ -247,10 +288,14 @@ h4, .h4
 				width: 20px
 				height: 20px
 				position: absolute
-				top: 1
-				left: 0
-	&__login
+				top: 1px
+				left: 0px
+				+media-breakpoint-down(lg)
+					top: -10px
+	&__search--mobile
 		margin-left: 30px
+		+media-breakpoint-down(md)
+			margin-left: 20px
 		a
 			display: -webkit-flex
 			display: -moz-flex
@@ -260,6 +305,42 @@ h4, .h4
 			align-items: center
 			position: relative
 			padding-left: 30px
+			&:after
+				content: ''
+				background: url(../img/search_icon--hover.svg) no-repeat
+				position: absolute
+				z-index: -10000
+			&:hover
+				&:before
+					background: url(../img/search_icon--hover.svg) no-repeat 
+			&:before
+				content: ''
+				background: url(../img/search_icon.svg) no-repeat
+				width: 20px
+				height: 20px
+				position: absolute
+				top: 1px
+				left: 0px
+				+media-breakpoint-down(lg)
+					top: -10px
+	&__login
+		margin-left: 30px
+		+media-breakpoint-down(md)
+			margin-left: 20px
+		a
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			position: relative
+			padding-left: 30px
+			&:after
+				content: ''
+				background: url(../img/login_icon--hover.svg) no-repeat
+				position: absolute
+				z-index: -10000
 			&:hover
 				&:before
 					background: url(../img/login_icon--hover.svg) no-repeat 
@@ -269,8 +350,10 @@ h4, .h4
 				width: 20px
 				height: 20px
 				position: absolute
-				top: 1
-				left: 0
+				top: 1px
+				left: 0px
+				+media-breakpoint-down(lg)
+					top: -10px
 	&__phone_img
 		margin-right: 10px
 	&__email_img
@@ -284,12 +367,43 @@ h4, .h4
 			display: none
 			position: absolute
 			top: 0
-			right: 47px
+			right: 63px
 			z-index: 1000
 			margin-top: 0
+			width: 320px
+			.menu__link
+				font-size: 20px
+				color: #555F69
+				font-weight: 500
+			.menu__item--hassubmenu
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					top: 26px
+					left: -14px
+					width: 20px
+					height: 30px
+					background: url(../img/arrow_right--gray_small.svg) no-repeat!important
+			.menu__item--hassubmenu.active
+					&:before
+						transform: rotate(90deg)
+						left: -27px
+			.menu__item--active
+				&:after
+					display: none
 			.menu__list
 				flex-direction: column
 				background: $accent
+				background-color: #ebf0f5
+				padding: 20px 10px 75px 25px
+				.menu__item
+					margin-left: 0
+					padding: 0
+		+media-breakpoint-down(sm)
+			top: 38px
+			right: 50%
+			margin-right: -160px
 	&__menu--active
 		display: block
 	&__search
@@ -303,22 +417,34 @@ h4, .h4
 		padding-bottom: 15px
 		+media-breakpoint-down(lg)
 			display: none
+		+media-breakpoint-down(sm)
+			display: block
+			padding-bottom: 0
 
 // HEADER MENU
 .menu
 	.menu-item--close
 		display: none
 		position: absolute
-		top: -47px
-		right: -42px
+		top: -15px
+		right: -7px
 		font-size: 27px
 		color: $gray
 		cursor: pointer
+		z-index: 100000
+		padding: 10px!important
 		&:hover
 			color: $accent
 		+media-breakpoint-down(lg)
 			display: block
-
+		+media-breakpoint-down(sm)
+		right: -9px
+		top: -15px
+	&__link
+		+media-breakpoint-down(lg)
+			padding: 20px 0
+			display: block
+			border-bottom: 1px solid lightgray
 	&__list
 		list-style-type: none
 		display: -webkit-flex
@@ -326,12 +452,49 @@ h4, .h4
 		display: -ms-flex
 		display: -o-flex
 		display: flex
+	&__item--social
+		.menu__item--social_link
+			position: absolute
+			bottom: -58px
+			left: 0
+			border: none
+			&:last-child
+				left: 50px
+		img
+			width: 20px
+			height: 20px
 	&__item
 		padding: 0 15px 15px 15px
 		position: relative
+		&:hover
+			.menu__submenu
+				display: block
+				+media-breakpoint-down(lg)
+					display: none
 		&:nth-child(2)
 			margin-left: 0
 			padding-left: 0
+			.menu__link
+				+media-breakpoint-down(lg)
+					border-top: 1px solid lightgray
+	&__submenu
+		position: absolute
+		width: 490px
+		top: 39px
+		left: 0
+		background-color: #EBF0F5
+		z-index: 1000
+		list-style-type: none
+		padding: 20px 30px 40px 30px
+		+media-breakpoint-down(lg)
+			width: 300px
+			position: relative
+			padding-top: 0
+		&:hover
+			display: block
+	&__sub-item
+		margin-left: 0
+		margin-bottom: 15px
 	&__item--active
 		&:after
 			content: ''
@@ -348,6 +511,8 @@ h4, .h4
 .search
 	&__form
 		position: relative
+		+media-breakpoint-down(sm)
+			display: inline-block
 	&__input
 		width: 255px
 		height: 30px
@@ -362,6 +527,8 @@ h4, .h4
 			color: $gray
 			opacity: 1
 			font-size: 14px
+		+media-breakpoint-down(lg)
+			width: 210px
 	&__button
 		position: absolute
 		top: 2px
@@ -369,6 +536,9 @@ h4, .h4
 		background-color: transparent
 		box-shadow: none
 		border: none
+		+media-breakpoint-down(sm)
+			top: -1px
+			right: 0px
 
 // PROMO
 .promo
@@ -377,7 +547,7 @@ h4, .h4
 	position: absolute
 	top: -28px
 	left: 0
-	z-index: 1000
+	z-index: 100
 	width: 100%
 	display: -webkit-flex
 	display: -moz-flex
@@ -388,6 +558,8 @@ h4, .h4
 	margin-bottom: 5px
 	+media-breakpoint-down(lg)
 		top: -353px
+	+media-breakpoint-down(sm)
+		top: -238px
 	.slick-dots
 	ul
 		.slick-active
@@ -411,6 +583,8 @@ h4, .h4
 			display: inline-block
 			position: relative
 			cursor: pointer
+			+media-breakpoint-down(sm)
+				margin-left: 60px
 			&:before
 				content: ''
 				position: absolute
@@ -419,6 +593,8 @@ h4, .h4
 				height: 1px
 				background-color: #fff
 				width: 136px
+				+media-breakpoint-down(sm)
+					width: 60px
 			&:first-child
 				margin-left: 0
 			&:last-child
@@ -448,6 +624,8 @@ h4, .h4
 				object-fit: cover
 				height: 100%
 				width: 100%
+		+media-breakpoint-down(sm)
+			height: 305px
 		img
 			width: 100%
 			object-fit: cover
@@ -474,6 +652,9 @@ h4, .h4
 		padding: 37px 45px 52px 45px
 		+media-breakpoint-down(lg)
 			position: static
+		+media-breakpoint-down(sm)
+			padding: 0
+			height: 210px
 		&:after
 			content: ''
 			position: absolute
@@ -484,6 +665,8 @@ h4, .h4
 			background: linear-gradient(45deg, rgb(0, 85, 120), rgb(80, 188, 214))
 			z-index: 0
 			opacity: .7
+			+media-breakpoint-down(lg)
+				opacity: 1
 	&__title
 		position: relative
 		z-index: 10
@@ -497,6 +680,10 @@ h4, .h4
 		font-weight: 400
 		text-decoration: underline
 		text-align: left
+		+media-breakpoint-down(sm)
+			font-size: 30px
+			line-height: 32px
+			margin-top: 20px
 	&__desc
 		position: relative
 		z-index: 10
@@ -504,6 +691,10 @@ h4, .h4
 		color: #fff
 		line-height: 28px
 		margin-top: 40px
+		+media-breakpoint-down(sm)
+			font-size: 14px
+			line-height: 18px
+			margin-top: 20px
 
 // SECTION SERVICE
 .sect-services
@@ -579,13 +770,14 @@ h4, .h4
 			align-items: center
 			+media-breakpoint-down(lg)
 				padding-right: 28px
+			+media-breakpoint-down(sm)
+				padding-right: 33px
 		&:nth-child(3)
 			broder-right: 0!important
 	&__link
 		color: $text
-		pointer-events: none
-		+media-breakpoint-down(lg)
-			pointer-events: auto 
+		&:hover
+			color: $text
 	&__submenu
 		display: none
 		margin-top: 40px
@@ -665,11 +857,26 @@ h4, .h4
 	&__info
 		background: #EBF0F5
 		padding: 28px 24px 24px 29px
+		+media-breakpoint-down(sm)
+			padding: 30px 18px
 	&__text
 		padding-right: 80px
 		margin-bottom: 21px
+		+media-breakpoint-down(sm)
+			padding-right: 18px
 	&__img
 		width: 100%
+	&__img-inner
+		+media-breakpoint-down(md)
+			height: 182px
+			width: 100%
+			position: relative
+	&__img
+		+media-breakpoint-down(md)
+			object-fit: cover
+			object-position: 20%
+			height: 100%
+			width: 100%
 
 .learn-more-link 
 	text-decoration: underline
@@ -696,6 +903,8 @@ h4, .h4
 	background: $hover
 	height: 100%
 	padding: 27px 29px 24px 30px
+	+media-breakpoint-down(md)
+		padding: 30px 18px
 	&__h3
 		color: #fff
 	&__text
@@ -721,6 +930,9 @@ h4, .h4
 	background: $accent
 	height: 280px
 	padding: 24px 24px 22px 45px
+	+media-breakpoint-down(sm)
+		padding: 30px 18px
+		height: auto
 	&__h3
 		color: #fff
 	&__text
@@ -741,17 +953,22 @@ h4, .h4
 	background: #EBF0F5
 	margin-top: 30px
 	padding: 24px 29px 26px 30px
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, .25)
+	+media-breakpoint-down(sm)
+		padding: 30px 18px
 	&__h3
 		font-family: "DaysOne", sans-serif
 		margin-bottom: 24px
 
 .form-min
-	+media-breakpoint-down(lg)
+	+media-breakpoint-down(md)
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
 		display: -o-flex
 		display: flex
+	+media-breakpoint-down(sm)
+		flex-direction: column
 	&__input
 		width: 100%
 		height: 50px
@@ -762,6 +979,8 @@ h4, .h4
 		padding: 0 20px
 		+media-breakpoint-down(lg)
 			margin-right: 30px
+		+media-breakpoint-down(sm)
+			margin-bottom: 7px
 		&::placeholder
 			font-size: 15px
 			border: 0
@@ -770,7 +989,7 @@ h4, .h4
 		border-radius: 0
 		max-width: 100%
 		margin-top: 10px
-		+media-breakpoint-down(lg)
+		+media-breakpoint-down(md)
 			margin-top: 0
 
 
@@ -805,12 +1024,16 @@ h4, .h4
 #servers
 	+media-breakpoint-down(lg)
 		background: #EBF0F5
+	+media-breakpoint-down(sm)
+		padding-top: 30px
 .facts-number
 	background-color: #EBF0F5
 	color: $gray
 	height: 160px
 	text-align: center
 	padding-top: 34px
+	+media-breakpoint-down(sm)
+		padding-top: 0
 	span
 		font-size: 54px
 		font-weight: 500
@@ -886,6 +1109,8 @@ h4, .h4
 					width: 15px
 					height: 30px
 					transition: right .5s ease
+					+media-breakpoint-down(sm)
+						right: -10px!important
 			.sect-news__img
 				transition: all .3s ease-out
 				+media-breakpoint-down(lg)
@@ -915,6 +1140,9 @@ h4, .h4
 				line-height: 32px
 				+media-breakpoint-down(lg)
 					color: $text
+				+media-breakpoint-down(sm)
+					font-size: 16px
+					line-height: 24px
 			.learn-more-link
 				text-decoration: none
 				font-size: 16px
@@ -941,6 +1169,8 @@ h4, .h4
 		display: flex
 		flex-direction: column
 		justify-content: space-between
+		+media-breakpoint-down(sm)
+			padding: 30px 18px
 
 .news-slick-dots-wrap
 	+media-breakpoint-down(lg)
@@ -1008,6 +1238,14 @@ h4, .h4
 			&:hover
 				color: inherit
 				text-decoration: underline
+		+media-breakpoint-down(sm)
+			bottom: -373px
+			width: 100%
+			p
+				width: 250px
+				text-align: center
+				margin-left: auto
+				margin-right: auto
 	&__title
 		margin-bottom: 36px
 		font-size: 24px
@@ -1017,8 +1255,13 @@ h4, .h4
 		display: -ms-flex
 		display: -o-flex
 		display: flex
+		+media-breakpoint-down(sm)
+			flex-direction: column-reverse
+			align-items: center
 	&__captcha
 		margin-left: 30px
+		+media-breakpoint-down(sm)
+			margin: 15px 0
 		img
 			width: 200px
 	textarea
@@ -1048,6 +1291,8 @@ h4, .h4
 	&__info
 		.footer__copy
 			margin-top: 50px
+			+media-breakpoint-down(sm)
+				margin-top: 107px
 	&__infoblock
 		margin-top: 40px
 	&__social
@@ -1064,32 +1309,39 @@ h4, .h4
 		.logo__img
 			width: 350px
 			height: 54px
+			+media-breakpoint-down(sm)
+				width: 250px
+				height: 40px
 	&__copy
 		color: $gray
 	&__info
 		text-align: right
+		+media-breakpoint-down(sm)
+			text-align: left
 		a, p
 			color: $gray
 	&__social--mobile
 		text-align: left
+		position: relative
+		z-index: 100000
+		+media-breakpoint-down(sm)
+			position: absolute
+			bottom: -189px
+			left: 14px
 
 
 .footer-menu
-	padding: 27px 30px
-	background: #CDD9E1
+	margin-bottom: 30px
 	height: 100%
 	&--submenu_fix
 		.footer-menu__submenu
 			margin-bottom: 20px
 		.footer-menu__item
 			margin-bottom: 20px
-			&:nth-child(1), &:nth-child(2), &:nth-child(4)
-				.footer-menu__link		
-					pointer-events: auto
-				&:before
-					display: none
 	&__list
 		list-style-type: none
+		padding: 27px 30px
+		background: #CDD9E1
 	&__item
 		margin-bottom: 20px
 		position: relative
@@ -1097,21 +1349,22 @@ h4, .h4
 		+media-breakpoint-down(md)
 			margin-bottom: 0
 			cursor: pointer
-			.footer-menu__link		
-				pointer-events: none
+	&__link
+		font-weight: 500
+		font-size: 18px
+		line-height: 26px
+	&__link--has_sub
+		position: relative
+		+media-breakpoint-down(md)
 			&:before
 				content: ''
 				position: absolute
-				top: 3px
+				top: 0
 				left: -21px
 				width: 30px
 				height: 30px
 				background: url(../img/arrow_right--gray.svg) no-repeat
 				background-size: 15px 15px
-	&__link
-		font-weight: 500
-		font-size: 18px
-		line-height: 26px
 	&__submenu
 		list-style-type: none
 		margin-top: 10px
@@ -1127,7 +1380,23 @@ h4, .h4
 		&:hover
 			text-decoration: underline
 
+.slick-initialized .slick-slide
+	outline: none
 
-.footer__mt-fixed,
-	+media-breakpoint-down(md)
-		margin-top: 30px
+.animated
+	+media-breakpoint-down(sm)
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important

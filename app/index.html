@@ -26,46 +26,74 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-10 col-md-6">
+				<div class="col-md-6">
 					<div class="logo header__logo"><a href="/"><img class="logo__img" src="img/logo.svg" alt=""></a></div>	
 				</div>
-				<div class="col-2 col-md-6">
+				<div class="col-12 col-md-6">
 					<div class="header__info">
 						<a class="header__gumburger"></a>
-						<div class="header__phone">
+						<div class="d-none d-md-block header__phone">
 							<a href="+78002002214"><span>8 800 200-22-14</span></a>
 						</div>
-						<div class="header__mail">
+						<div class="d-none d-md-block header__mail">
 							<a href="mailto:mail@nncsm.ru"><span>Связь с нами</span></a>
 						</div>
+						<div class="d-none d-md-block d-xl-none header__search--mobile">
+							<a href=""></a>
+						</div>
+
 						<div class="header__login"><a href=""><span>Личный кабинет</span></a></div>
 					</div>
 				</div>
-			</div>
-
-			<div class="row">
 
 				<div class="col-xl-9">
 					<nav class="menu header__menu">
 						<ul class="menu__list">
-							<li class="menu__item menu-item--close"><i class="fa fa-times"></i></li>	
-							<li class="menu__item"><a class="menu__link"href="">О центре</a></li>
-							<li class="menu__item menu__item--active"><a class="menu__link" href="">Услуги</a>
+							<li class="menu__item menu-item--close"><img src="img/cross_icon.svg" alt=""></li>	
+							<li class="menu__item menu__item--hassubmenu"><a class="menu__link"href="">О центре</a>
 								<ul class="menu__submenu">
-									<li class="menu__sub-item"><a class="menu__sub-link" href="">Услуга 1</a></li>
-									<li class="menu__sub-item"><a class="menu__sub-link" href="">Услуга 2</a></li>
-									<li class="menu__sub-item"><a class="menu__sub-link" href="">Услуга 3</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">История</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Структура</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Документы</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Реквизиты</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Благодарственные письма</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Профсоюзная организация</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Работа и стажировка</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Область акредитации</a></li>
+								</ul>
+							</li>
+							<li class="menu__item menu__item--hassubmenu menu__item--active"><a class="menu__link" href="">Услуги</a>
+								<ul class="menu__submenu">
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Метрология</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Испытания</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Подтверждение соответствия</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Аттестация испытательного оборудования</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Оценка состояния измерений</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Производство стандартных образцов</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Узлы учета энергоресурсов</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Межлабораторные сличительные испытания</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Иструментальный контроль технического состояния изделий медицинской техники</a></li>
+									<li class="menu__sub-item"><a class="menu__sub-link" href="">Ремонт оптико-механических приборов</a></li>
 								</ul>
 							</li>
 							<li class="menu__item"><a class="menu__link" href="">Конкурсы</a></li>
 							<li class="menu__item"><a class="menu__link" href="">Новости</a></li>
-							<li class="menu__item"><a class="menu__link" href="">Обратная связь</a></li>
+							<li class="menu__item menu__item--hassubmenu"><a class="menu__link" href="">Обратная связь</a>
+							<ul class="menu__submenu">
+								<li class="menu__sub-item"><a class="menu__sub-link" href="">FAQ</a></li>
+								<li class="menu__sub-item"><a class="menu__sub-link" href="">Жалобы, предложения</a></li>
+							</ul>
+							</li>
 							<li class="menu__item"><a class="menu__link" href="">Контакты</a></li>
+							<li class="menu__item menu__item--social">
+								<a class="menu__link menu__item--social_link" href=""><img src="img/phone_icon.svg" alt=""></a>
+								<a class="menu__link menu__item--social_link" href=""><img src="img/email_icon.svg" alt=""></a>
+							</li>
 						</ul>
 					</nav>
 				</div>
 
-				<div class="col-3">
+				<div class="col-8 col-md-3">
 					<div class="search header__search">
 						<form action="" class="search__form">
 							<input class="search__input" type="search" name="search" placeholder="Поиск по сайту...">
@@ -367,7 +395,10 @@
 
 					<div class="col-lg-8">
 						<div class="water_meters wow animated fadeInLeft" data-wow-duration="2s">
-							<img class="water_meters__img" src="img/@2x/water_meters.jpg" alt="">
+							<div class="water_meters__img-inner">
+								<img class="d-none d-sm-block water_meters__img" src="img/@2x/water_meters.jpg" alt="">
+								<img class="d-block d-sm-none water_meters__img" src="img/@2x/water_meters--sm.jpg" alt="">
+							</div>
 							<div class="water_meters__info">
 								<div class="water_meters__title">
 									<h3 class="h3">Поверка счетчиков воды</h3>
@@ -639,7 +670,7 @@
 				<div class="col-md-6 col-lg-4">
 					<nav class="footer-menu">
 						<ul class="footer-menu__list">
-							<li class="footer-menu__item"><a class="footer-menu__link" href="">О центре</a>
+							<li class="footer-menu__item"><a class="footer-menu__link footer-menu__link--has_sub" href="">О центре</a>
 								<ul class="footer-menu__submenu">
 									<li class="footer-menu__sub-item"><a class="footer-menu__sub-link" href="">История</a></li>
 									<li class="footer-menu__sub-item"><a class="footer-menu__sub-link" href="">Структура</a></li>
@@ -658,7 +689,7 @@
 				<div class="col-md-6 col-lg-4">
 					<nav class="footer-menu">
 						<ul class="footer-menu__list">
-							<li class="footer-menu__item"><a class="footer-menu__link"href="">Услуги</a>
+							<li class="footer-menu__item"><a class="footer-menu__link footer-menu__link--has_sub"href="">Услуги</a>
 								<ul class="footer-menu__submenu">
 									<li class="footer-menu__sub-item"><a class="footer-menu__sub-link" href="">Метрология</a></li>
 									<li class="footer-menu__sub-item"><a class="footer-menu__sub-link" href="">Испытания</a></li>
@@ -676,12 +707,12 @@
 					</nav>
 				</div>
 
-				<div class="col-lg-4 footer__mt-fixed">
+				<div class="col-lg-4">
 					<nav class="footer-menu footer-menu--submenu_fix">
 						<ul class="footer-menu__list">
 							<li class="footer-menu__item"><a class="footer-menu__link" href="">Конкурсы</a></li>
 							<li class="footer-menu__item"><a class="footer-menu__link" href="">Новости</a></li>
-							<li class="footer-menu__item"><a class="footer-menu__link" href="">Обратная связь</a>
+							<li class="footer-menu__item"><a class="footer-menu__link footer-menu__link--has_sub" href="">Обратная связь</a>
 								<ul class="footer-menu__submenu">
 									<li class="footer-menu__sub-item"><a class="footer-menu__sub-link" href="">FAQ</a></li>
 									<li class="footer-menu__sub-item"><a class="footer-menu__sub-link" href="">Жалобы, предложения</a></li>
@@ -722,7 +753,7 @@
 								<br>
 								<p><a href="+78002002214">8 800 200-22-14</a></p>
 								<p><a href="mailto:mail@nncsm.ru">mail@nncsm.ru</a></p>
-								<p class="footer__copy d-none d-md-block">© РСТ Нижегородский ЦСМ, 2019</p>
+								<p class="footer__copy d-block d-md-block d-lg-none">© РСТ Нижегородский ЦСМ, 2019</p>
 							</div>
 						</div>
 					</div>
