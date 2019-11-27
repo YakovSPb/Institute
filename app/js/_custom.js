@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-// WOW FOR ANIMATE.CSS START
-new WOW().init();
-// WOW FOR ANIMATE.CSS END
-
 // MAIN-PAIGE-SLIDER START
 $('.slider').slick({
   infinite: true,
@@ -15,6 +11,15 @@ $('.slider').slick({
   appendDots:$(".slick-dots-wrap"),
 });
 // MAIN-PAIGE-SLIDER END
+
+
+
+
+
+// WOW FOR ANIMATE.CSS START
+new WOW().init();
+// WOW FOR ANIMATE.CSS END
+
 
 
 // MEDIA JAVASCRIPT START
@@ -59,14 +64,14 @@ function foo2(mq) {
  // MOBILE MOBILE MOBILE END 
 
  // MOBILE MENU TOGGLE_SLUG START
- $('.header__menu .menu__item').click(function(){
- $(this).find('.menu__submenu').slideToggle('slow');
+ $('.menu__item--hassubmenu .menu__link').click(function(){
+ $(this).next('.menu__submenu').slideToggle('slow');
  $(this).toggleClass('active');
  });
  // MOBILE MENU TOGGLE_SLUG SEND
 
 //DESTROY LINK FOR MOBILE MENU START
-$('.menu__list .menu__item--hassubmenu').click(function(e){
+$('.menu__list .menu__item--hassubmenu .menu__link').click(function(e){
   e.preventDefault();
 });
 //DESTROY LINK FOR MOBILE MENU END
@@ -222,8 +227,6 @@ $(window).scroll(function(){
  }
 });
 
-
-
 // CIRCLE PROCENT END
 function numUp(){
 
@@ -256,18 +259,6 @@ function numUp(){
   isAnimatePriceInitialized = true;
 }
 // NUMBERS UP END
-
-
-
-// MAIN-PAIGE-MEWS-SLIDER START
-$('.sect-news__slider').slick({
-  slidesToShow: 1,
-  infinite: true,
-  dots: true,
-  arrows: false,
-  appendDots:$(".news-slick-dots-wrap"),
-});
-// MAIN-PAIGE-MEWS-SLIDER END
 
 
 
@@ -305,6 +296,45 @@ $('.footer-menu__item').click(function(){
 
 // FOOTER MOBILE TAB END
 
+
+// MAIN-PAIGE-MEWS-SLIDER START
+$('.sect-news__slider').slick({
+  slidesToShow: 1,
+  infinite: true,
+  dots: true,
+  arrows: false,
+  appendDots:$(".news-slick-dots-wrap"),
+});
+// MAIN-PAIGE-MEWS-SLIDER END
+
+
+// REINIT SLIDER MAIN-PAGE-NEWS START
+let sectNewsHeight = ($('#servers').offset().top-100);
+let isReinitSlider = false;
+
+$(window).scroll(function(){
+  if($(window).scrollTop()>sectNewsHeight){
+       if (!isReinitSlider) {
+     reinitSlider();
+   }
+
+ }
+});
+
+function reinitSlider(){
+$('.sect-news__slider').slick({
+  slidesToShow: 1,
+  infinite: true,
+  dots: true,
+  arrows: false,
+  appendDots:$(".news-slick-dots-wrap"),
+});
+
+  isReinitSlider = true;
+}
+
+
+// REINIT SLIDER MAIN-PAGE-NEWS END
 
 
 });
